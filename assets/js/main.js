@@ -54,16 +54,16 @@ const team = [
 for (let i = 0; i < team.length; i++) {
     const person = team[i];
     // transform the image string in a real image
+    // organize individual members into cards
     const cardMarkup = ` 
     <div class="col-xs-1 col-sm-6 col-lg-4">
-    <div class="card">
-    <img src="./assets/img/${person.image}" class="card-img-top" alt="${person.image}">
+    <div class="card rounded-0 border-0 text-center text-secondary mb-3">
+    <img src="./assets/img/${person.image}" class="card-img-top rounded-0" alt="${person.image}">
     <div class="card-body">
     <h5 class="card-title">${person.name}</h5>
     <p class="card-text">${person.role}</p>
     </div>
     </div>
-    </div>`
-    // organize individual members into cards
+    </div>`;
     document.querySelector('.row').insertAdjacentHTML('beforeend', cardMarkup);
 }
