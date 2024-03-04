@@ -31,9 +31,21 @@ const team = [
     },
 ];
 
-// print the name, role and image string of the team array to the console
-for (let i = 0; i < team.length; i++) {
-    console.log(team[i]);
-}
+// MILESTONE 1 - print the name, role and image string of the team array to the console
+// for (let i = 0; i < team.length; i++) {
+//     console.log(team[i]);
+// }
 
-// prints the same information to the DOM as strings
+// MILESTONE 2 - prints the same information to the DOM as strings
+// select a dom element where I will put the info
+const teamInfo = document.querySelector('.team_info');
+// create a list of the info from the team array
+const list = document.createElement('ul');
+teamInfo.append(list);
+// populate the list with the info
+for (let i = 0; i < team.length; i++) {
+    const person = team[i];
+    const listItem = document.createElement('li');
+    listItem.innerText = `Name: ${person.name} - Role: ${person.role} - Image: ${person.role}`;
+    list.append(listItem);
+}
