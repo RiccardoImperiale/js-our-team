@@ -35,3 +35,5 @@ const team = [
 for (let i = 0; i < team.length; i++) {
     console.log(team[i]);
 }
+
+// prints the same information to the DOM as strings
