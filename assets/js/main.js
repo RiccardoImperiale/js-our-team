@@ -38,14 +38,32 @@ const team = [
 
 // MILESTONE 2 - prints the same information to the DOM as strings
 // select a dom element where I will put the info
-const teamInfo = document.querySelector('.team_info');
+// const teamInfo = document.querySelector('.team_info');
 // create a list of the info from the team array
-const list = document.createElement('ul');
-teamInfo.append(list);
+// const list = document.createElement('ul');
+// teamInfo.append(list);
 // populate the list with the info
+// for (let i = 0; i < team.length; i++) {
+//     const person = team[i];
+//     const listItem = document.createElement('li');
+//     listItem.innerText = `Name: ${person.name} - Role: ${person.role} - Image: ${person.image}`;
+//     list.append(listItem);
+// }
+
+// bonus
 for (let i = 0; i < team.length; i++) {
     const person = team[i];
-    const listItem = document.createElement('li');
-    listItem.innerText = `Name: ${person.name} - Role: ${person.role} - Image: ${person.role}`;
-    list.append(listItem);
+    // transform the image string in a real image
+    const cardMarkup = ` 
+    <div class="col-xs-1 col-sm-6 col-lg-4">
+    <div class="card">
+    <img src="./assets/img/${person.image}" class="card-img-top" alt="${person.image}">
+    <div class="card-body">
+    <h5 class="card-title">${person.name}</h5>
+    <p class="card-text">${person.role}</p>
+    </div>
+    </div>
+    </div>`
+    // organize individual members into cards
+    document.querySelector('.row').insertAdjacentHTML('beforeend', cardMarkup);
 }
