@@ -30,3 +30,8 @@ const team = [
         image: 'barbara-ramos-graphic-designer.jpg',
     },
 ];
+
+// print the name, role and image string of the team array to the console
+for (let i = 0; i < team.length; i++) {
+    console.log(team[i]);
+}
